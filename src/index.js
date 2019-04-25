@@ -31,7 +31,7 @@ function watcher(fetch, Watcher) {
     if (shouldWatch) {
       promise.then(res => {
         const status = res.status
-        const data = res.json()
+        const data = res.clone().json()
         const headers = parseIteratorData(res.headers)
         emitRes({status, headers, data}).catch(console.error)
       })
