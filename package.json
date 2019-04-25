@@ -4,7 +4,8 @@
   "description": "request-watcher plugin for fetch",
   "main": "lib/fetch-watcher.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "preversion": "npm run build"
   },
   "repository": {
     "type": "git",

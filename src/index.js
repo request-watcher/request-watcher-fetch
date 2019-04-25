@@ -22,7 +22,7 @@ function watcher(fetch, Watcher) {
         try {
           data = JSON.parse(body)
         } catch (e) {
-          data = {_body: body}
+          data = parseIteratorData(new URLSearchParams(body))
         }
       }
 
