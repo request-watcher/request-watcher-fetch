@@ -1,6 +1,6 @@
 {
   "name": "request-watcher-fetch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "request-watcher plugin for fetch",
   "main": "lib/fetch-watcher.js",
   "scripts": {
