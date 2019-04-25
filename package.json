@@ -1,0 +1,29 @@
+{
+  "name": "request-watcher-fetch",
+  "version": "0.0.0",
+  "description": "request-watcher plugin for fetch",
+  "main": "lib/fetch-watcher.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/request-watcher/request-watcher-fetch.git"
+  },
+  "author": "lisiurday <lisiurday@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/request-watcher/request-watcher-fetch/issues"
+  },
+  "homepage": "https://github.com/request-watcher/request-watcher-fetch#readme",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
+}
