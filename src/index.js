@@ -9,7 +9,9 @@ function watcher(fetch, Watcher) {
     if (shouldWatch) {
       const headers = config && config.headers || {}
       const method = config && config.method || 'GET'
-      const query = parseIteratorData(new URLSearchParams(url))
+      let queryString = url.substring(url.indexOf('?'))
+      queryString = queryString.startsWith('?') ? queryString : ''
+      const query = parseIteratorData(new URLSearchParams(queryString))
 
       let data = {}
       if (config) {
@@ -29,10 +31,12 @@ function watcher(fetch, Watcher) {
     }
     const promise = fetch(...args)
     if (shouldWatch) {
+      let status, headers
       promise.then(res => {
-        const status = res.status
-        const data = res.clone().json()
-        const headers = parseIteratorData(res.headers)
+        status = res.status
+        headers = parseIteratorData(res.headers)
+        return res.clone().json()
+      }).then(data => {
         emitRes({status, headers, data}).catch(console.error)
       })
     }
