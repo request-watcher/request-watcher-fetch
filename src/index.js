@@ -9,7 +9,7 @@ function watcher(fetch, Watcher) {
     if (shouldWatch) {
       const headers = config && config.headers || {}
       const method = config && config.method || 'GET'
-      const query = parseIteratorData(new URL(url).searchParams)
+      const query = parseIteratorData(new URLSearchParams(url))
 
       let data = {}
       if (config) {
